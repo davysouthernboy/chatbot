@@ -26,12 +26,29 @@
 
 document.addEventListener("DOMContentLoaded", () => {
   document.querySelector("#input").addEventListener("keydown", function(e) {
+    /*** Listen only for enter key ***/
+
     if (e.code === "Enter") {
-        console.log("You pressed the enter button!")
+        let input = inputField.value;
+        inputField.value = "";
+        output(input);
     }
   });
 });
 
+
+function output(input) {
+   // remove anything other than words, digits, and spaces
+   let text = input.toLowerCase().replace( /[^\w\s\d]/gi, "");
+
+  /*** TO-DO: Additional Text Clean Up Routines Here ***/
+
+  /*** remove indefinite articles, unnecessary phrases, and standardize
+       speech to avoid having to account for different cases of the 
+       same phrases of speech ***/
+
+ 
+}
 
 </script>
 
