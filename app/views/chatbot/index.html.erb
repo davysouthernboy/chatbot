@@ -51,6 +51,22 @@ function output(input) {
   text = text.replace(/\s?a\s?/g, "")
              .replace(/whats/g, "what is")
              .replace(/\s?please\s?/g, "");
+
+  let product;
+
+  /**** if compare finds a matching utterance,
+        get appropriate answer.  otherwise choose random one ****/
+
+  if compare(utterances, answers, text) {
+    product = compare(utterances, answers, text);
+  }
+  else {
+    product = alternatives[Math.floor(Math.random() * alternatives.length)];
+  }
+
+  // update DOM
+  addChatEntry(input, product);
+  
 }
 
 /*** This an array of arrays that contain possible trigger phrases from user input AND answers based on those triggers ***/
