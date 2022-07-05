@@ -68,6 +68,35 @@ const answers = [
 const alternatives = [
    ["Go on..."]
 ];
+
+/*** compare utterances array to answers array ***/
+function compare(utterancesArray, answersArray, string) {
+   let item;
+
+   /*** Can this be re-written into one for loop if we could array sizes the same??? ***/
+   /*** probably not.. the outerArray is traversed...and peeping into the innerArray?? **/
+
+   for (let x = 0; x < utterancesArray.length; x++) {
+
+     for (let y = 0; y < utterancesArray.length; y++) {
+
+        // x is the outter utterances array that houses different phrases
+        // y is the inner utterances array that groups similar phrases together
+
+        if(utterancesArray[x][y] === string) {
+           /*** when a matching utterance is found,
+           pull the corresponding outter answers array.
+           Then randomly choose one of similar or appropriate response
+           from the inner answers array ***/
+ 
+           items = answersArray[x];
+           item = items[Math.floor(Math.random() * items.length)];
+
+        }
+     }
+   }
+   return item;
+}
 </script>
 
 
