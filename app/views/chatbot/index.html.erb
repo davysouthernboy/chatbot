@@ -47,9 +47,26 @@ function output(input) {
        speech to avoid having to account for different cases of the 
        same phrases of speech ***/
 
- 
+  text = text.replace(/\s?a\s?/g, "")
+             .replace(/whats/g, "what is")
+             .replace(/\s?please\s?/g, "");
 }
 
+/*** This an array of arrays that contain possible trigger phrases from user input AND answers based on those triggers ***/
+/*** utterances[0] will respond with answers[0] upon matching and so on 
+
+const utterances = [
+   ["how are you", "how is life", "how are things"] // 0
+];
+
+const answers = [
+   ["Fine...how are you?", "Pretty well, how are you?", "Fantastic, how are you?"] // 0
+];
+
+/*** For any other user input ***/
+const alternatives = [
+   ["Go on..."]
+];
 </script>
 
 
