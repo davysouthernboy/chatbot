@@ -35,7 +35,7 @@ const utterances = [
    ["how are you", "how is life", "how are things"], // 0
    ["who are you", "are you human", "are you bot", "are you human or bot"], // 1
    ["who created you", "who made you"], // 2
-   ["what is nursing case manager", "what is nurse case manager", "what is nurse case management", "what is nursing case management", "what is case management", "what is your job"], // 3
+   ["what is nursing case manager", "what is nurse case manager", "what is nurse case management", "what is nursing case management", "what is case management", "what is case manager", "what is your job"], // 3
    ["who makes referrals"], // 4
    ["what is role of case manager", "what is your role", "what do you do", "what does case manager do"], // 5
    ["what are goals", "what are outcomes"] // 6
@@ -155,7 +155,7 @@ function compare(utterancesArray, answersArray, string) {
         // x is the outter utterances array that houses different phrases
         // y is the inner utterances array that groups similar phrases together
  
-        alert("search_key: " + string + " utterance: " + utterancesArray[x][y]);
+        
  
         if(utterancesArray[x][y] === string) {
            /*** when a matching utterance is found,
