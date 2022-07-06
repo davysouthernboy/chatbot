@@ -121,7 +121,7 @@ function addChatEntry(input, response) {
    messagesContainer.appendChild(botDiv);
 
 
-   setTimeout(() => { botText.innerText = `${response};` }, Math.random(2000, 6000)); // remember Math.random has inclusive, exclusive pattern. Will include 2000 up to 5999 milliseconds
+   setTimeout(() => { botText.innerText = `${response}` }, Math.random(3000, 8000)); // remember Math.random has inclusive, exclusive pattern. Will include 3000 up to 7999 milliseconds
 }
 
 
@@ -129,7 +129,7 @@ function addChatEntry(input, response) {
 function compare(utterancesArray, answersArray, string) {
    let item;
 
-   alert("needle: " + string);
+   
 
    // outer array open
    for (let x = 0; x < utterancesArray.length; x++) {
@@ -139,7 +139,7 @@ function compare(utterancesArray, answersArray, string) {
         // x is the outter utterances array that houses different phrases
         // y is the inner utterances array that groups similar phrases together
  
-          alert("utterances: " + utterancesArray[x][y]);
+          
  
         if(utterancesArray[x][y] === string) {
            /*** when a matching utterance is found,
