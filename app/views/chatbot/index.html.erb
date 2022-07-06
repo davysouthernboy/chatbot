@@ -79,9 +79,10 @@ function output(input) {
        speech to avoid having to account for different cases of the 
        same phrases of speech ***/
 
-  text = text.replace(/\s?a\s?/g, "")
+  text = text.replace(/ a /g, "")
              .replace(/whats/g, "what is")
-             .replace(/\s?please\s?/g, "");
+             .replace(/ please/g, "")
+             .replace(/please /g, "");
 
 
   
