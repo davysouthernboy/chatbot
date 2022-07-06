@@ -46,11 +46,13 @@ const alternatives = [
 
 
 
-const inputField = document.getElementById("input");
 
 document.addEventListener("DOMContentLoaded", () => {
   document.querySelector("#input").addEventListener("keydown", function(e) {
     /*** Listen only for enter key ***/
+
+    const inputField = document.getElementById("input");
+
 
     if (e.code === "Enter") {
         let input = inputField.value;
