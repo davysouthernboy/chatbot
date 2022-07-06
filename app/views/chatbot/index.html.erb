@@ -67,7 +67,7 @@ document.addEventListener("DOMContentLoaded", () => {
 function output(input) {
    // remove anything other than words, digits, and spaces
    let text = input.toLowerCase().replace( /[^\w\s\d]/gi, "");
-   alert(text);
+   
 
   /*** TO-DO: Additional Text Clean Up Routines Here ***/
 
@@ -78,6 +78,9 @@ function output(input) {
   text = text.replace(/\s?a\s?/g, "")
              .replace(/whats/g, "what is")
              .replace(/\s?please\s?/g, "");
+
+
+  alert(text); 
 
   let response;
 
@@ -126,6 +129,8 @@ function addChatEntry(input, response) {
 function compare(utterancesArray, answersArray, string) {
    let item;
 
+   alert("needle: " + string);
+
    /*** Can this be re-written into one for loop if we could array sizes the same??? ***/
    /*** probably not.. the outerArray is traversed...and peeping into the innerArray?? **/
 
@@ -135,7 +140,9 @@ function compare(utterancesArray, answersArray, string) {
 
         // x is the outter utterances array that houses different phrases
         // y is the inner utterances array that groups similar phrases together
-
+ 
+          alert("utterances: " + utterancesArray[x][y]);
+ 
         if(utterancesArray[x][y] === string) {
            /*** when a matching utterance is found,
            pull the corresponding outter answers array.
