@@ -80,7 +80,7 @@ function output(input) {
              .replace(/\s?please\s?/g, "");
 
 
-  alert(text); 
+  
 
   let response;
 
@@ -131,12 +131,10 @@ function compare(utterancesArray, answersArray, string) {
 
    alert("needle: " + string);
 
-   /*** Can this be re-written into one for loop if we could array sizes the same??? ***/
-   /*** probably not.. the outerArray is traversed...and peeping into the innerArray?? **/
-
+   // outer array open
    for (let x = 0; x < utterancesArray.length; x++) {
-
-     for (let y = 0; y < utterancesArray.length; y++) {
+     // inner array get
+     for (let y = 0; y < utterancesArray[x].length; y++) {
 
         // x is the outter utterances array that houses different phrases
         // y is the inner utterances array that groups similar phrases together
