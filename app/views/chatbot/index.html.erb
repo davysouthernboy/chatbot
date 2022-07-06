@@ -28,6 +28,24 @@
        I learned a lot.  The original script can be found at
        https://www.htmlgoodies.com/javascript/basic-chatbot-in-javascript/ ***/
 
+/*** This an array of arrays that contain possible trigger phrases from user input AND answers based on those triggers ***/
+/*** utterances[0] will respond with answers[0] upon matching and so on 
+
+const utterances = [
+   ["how are you", "how is life", "how are things"] // 0
+];
+
+const answers = [
+   ["Fine...how are you?", "Pretty well, how are you?", "Fantastic, how are you?"] // 0
+];
+
+/*** For any other user input ***/
+const alternatives = [
+   ["Go on..."]
+];
+
+
+
 const inputField = document.getElementById("input");
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -99,21 +117,6 @@ function addChatEntry(input, response) {
    setTimeout(() => { botText.innerText = `${response};` }, Math.random(2000, 6000); // remember Math.random has inclusive, exclusive pattern. Will include 2000 up to 5999 milliseconds
 }
 
-/*** This an array of arrays that contain possible trigger phrases from user input AND answers based on those triggers ***/
-/*** utterances[0] will respond with answers[0] upon matching and so on 
-
-const utterances = [
-   ["how are you", "how is life", "how are things"] // 0
-];
-
-const answers = [
-   ["Fine...how are you?", "Pretty well, how are you?", "Fantastic, how are you?"] // 0
-];
-
-/*** For any other user input ***/
-const alternatives = [
-   ["Go on..."]
-];
 
 /*** compare utterances array to answers array ***/
 function compare(utterancesArray, answersArray, string) {
