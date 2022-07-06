@@ -80,7 +80,7 @@ function output(input) {
   /**** if compare finds a matching utterance,
         get appropriate answer.  otherwise choose random one ****/
 
-  if compare(utterances, answers, text) {
+  if (compare(utterances, answers, text)) {
     response = compare(utterances, answers, text);
   }
   else {
