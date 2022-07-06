@@ -23,6 +23,11 @@
 </style>
 
 <script>
+
+/***** Special thanks to Tariq Siddiqui of HTMLGoodies for this wonderfully written chatbot script.
+       I learned a lot.  The original script can be found at
+       https://www.htmlgoodies.com/javascript/basic-chatbot-in-javascript/ ***/
+
 const inputField = document.getElementById("input");
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -52,21 +57,46 @@ function output(input) {
              .replace(/whats/g, "what is")
              .replace(/\s?please\s?/g, "");
 
-  let product;
+  let response;
 
   /**** if compare finds a matching utterance,
         get appropriate answer.  otherwise choose random one ****/
 
   if compare(utterances, answers, text) {
-    product = compare(utterances, answers, text);
+    response = compare(utterances, answers, text);
   }
   else {
-    product = alternatives[Math.floor(Math.random() * alternatives.length)];
+    response = alternatives[Math.floor(Math.random() * alternatives.length)];
   }
 
   // update DOM
-  addChatEntry(input, product);
+  addChatEntry(input, response);
   
+}
+
+function addChatEntry(input, response) {
+
+   /**** Apppend user input to messages container first...
+         Then the bot's response after a random delay ***/
+
+   const messagesContainer = document.getElementById("messages");
+   
+   let userDiv = document.createElement("div");
+   userDiv.id = "user";
+   userDiv.className = "user response";
+   userDiv.innerHTML = `${input}`;
+   messagesContainer.appendChild(userDiv);
+
+   let botDiv = document.createElement("div");
+   let botText = document.createElement("span");
+   botDiv.id = "bot";
+   botDiv.className = "bot response";
+   botText.innerText = "Typing...";
+   botDiv.appendChild(botText);
+   messagesContainer.appendChild(botDiv);
+
+
+   setTimeout(() => { botText.innerText = `${response};` }, Math.random(2000, 6000); // remember Math.random has inclusive, exclusive pattern. Will include 2000 up to 5999 milliseconds
 }
 
 /*** This an array of arrays that contain possible trigger phrases from user input AND answers based on those triggers ***/
